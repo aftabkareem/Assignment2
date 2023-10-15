@@ -1,0 +1,26 @@
+public class Solution {
+    public int[] TwoSum(int[] numbers, int target) {
+        int l = 0;
+        int r = numbers.Length-1;
+        int cursum = 0;
+        int[] cur=new int[2];
+        while (l < r){
+            cursum = numbers[l] + numbers[r];
+            if (cursum > target)
+                {
+                    r--;
+                }
+            else if (cursum < target)
+            {
+                l++;
+            }
+            else
+            {
+                cur[0]=l+1;
+                cur[1]=r+1;
+                break;
+            }
+        }
+        return cur;
+    }
+}
